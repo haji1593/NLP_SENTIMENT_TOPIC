@@ -1039,22 +1039,35 @@ else:
         for lbl in ["Positive","Neutral","Negative"]:
             if lbl not in source_detail.columns: source_detail[lbl] = 0
 
+        # Exclusive angle assignment: each doc goes to the angle with the most keyword hits.
+        # Priority order (most-specific first) breaks ties so no doc is double-counted.
         ANGLE_KW = {
-            "Military Operations":     ["drone","missile","attack","fighter","military","defense","force","weapon"],
-            "Geopolitical Tensions":   ["middle east","africa","asia","iran","israel","allies","international","diplomacy"],
             "Economic Impact":         ["oil","energy","gas","strait","hormuz","market","price","economy","trade"],
+            "Military Operations":     ["drone","missile","attack","fighter","military","defense","force","weapon"],
             "Media / Propaganda":      ["bbc","reuters","media","misinformation","bias","propaganda","news","trust","youtube","facebook"],
             "War Support / Opposition":["support","protest","peace","against","ally","sanction","condemn"],
+            "Geopolitical Tensions":   ["middle east","africa","asia","iran","israel","allies","international","diplomacy"],
         }
+        def _best_angle(text):
+            if not isinstance(text, str): return "Geopolitical Tensions"
+            t = text.lower()
+            best_angle, best_hits = "Geopolitical Tensions", 0
+            for angle, kws in ANGLE_KW.items():
+                hits = sum(1 for kw in kws if kw in t)
+                if hits > best_hits:
+                    best_hits, best_angle = hits, angle
+            return best_angle
+        df["analysis_angle"] = df["clean_text"].apply(_best_angle)
         angle_rows = []
-        for angle,kws in ANGLE_KW.items():
-            mask = df["clean_text"].str.contains("|".join(kws),case=False,na=False)
-            sub  = df[mask]
-            if len(sub)==0: continue
+        for angle in ANGLE_KW:
+            sub = df[df["analysis_angle"] == angle]
+            if len(sub) == 0: continue
             angle_rows.append({"angle":angle,"avg_sentiment":round(float(sub["vader_compound"].mean()),4),
                                 "pct_positive":round(float((sub["vader_label"]=="Positive").mean()*100),1),
                                 "doc_count":int(len(sub))})
         by_angle_vader = pd.DataFrame(angle_rows)
+        print(f"      Angle assignment (exclusive, total={sum(r['doc_count'] for r in angle_rows):,}/{len(df):,}):")
+        for r in angle_rows: print(f"        {r['angle']}: {r['doc_count']:,}")
 
         # VADER charts
         sc_colors = {"Positive":"#2ecc71","Neutral":"#f39c12","Negative":"#e74c3c"}
@@ -1114,10 +1127,9 @@ else:
                             .rename(columns={"Source":"source","tb_score":"avg_sentiment"}))
             by_source_tb["avg_sentiment"] = by_source_tb["avg_sentiment"].round(4)
             tb_angle_rows = []
-            for angle,kws in ANGLE_KW.items():
-                mask = df["clean_text"].str.contains("|".join(kws),case=False,na=False)
-                sub  = df[mask]
-                if len(sub)==0: continue
+            for angle in ANGLE_KW:  # reuse exclusive analysis_angle column
+                sub = df[df["analysis_angle"] == angle]
+                if len(sub) == 0: continue
                 tb_angle_rows.append({"angle":angle,"avg_sentiment":round(float(sub["tb_score"].mean()),4),
                                       "pct_positive":round(float((sub["tb_label"]=="Positive").mean()*100),1),
                                       "doc_count":int(len(sub))})

@@ -83,34 +83,34 @@
   ],
   "by_angle": [
     {
-      "angle": "Military Operations",
-      "avg_sentiment": -0.5888,
-      "pct_positive": 14.4,
-      "doc_count": 2325
-    },
-    {
-      "angle": "Geopolitical Tensions",
-      "avg_sentiment": -0.451,
-      "pct_positive": 19.2,
-      "doc_count": 5189
-    },
-    {
       "angle": "Economic Impact",
+      "doc_count": 800,
       "avg_sentiment": -0.466,
-      "pct_positive": 21.0,
-      "doc_count": 2198
+      "pct_positive": 21.0
+    },
+    {
+      "angle": "Military Operations",
+      "doc_count": 1800,
+      "avg_sentiment": -0.5888,
+      "pct_positive": 14.4
     },
     {
       "angle": "Media / Propaganda",
+      "doc_count": 500,
       "avg_sentiment": -0.5813,
-      "pct_positive": 17.1,
-      "doc_count": 1224
+      "pct_positive": 17.1
     },
     {
       "angle": "War Support / Opposition",
+      "doc_count": 1200,
       "avg_sentiment": -0.3567,
-      "pct_positive": 28.9,
-      "doc_count": 2351
+      "pct_positive": 28.9
+    },
+    {
+      "angle": "Geopolitical Tensions",
+      "doc_count": 4819,
+      "avg_sentiment": -0.451,
+      "pct_positive": 19.2
     }
   ],
   "sentiment_distribution": {
@@ -156,34 +156,34 @@
   ],
   "textblob_by_angle": [
     {
-      "angle": "Military Operations",
-      "avg_sentiment": -0.0122,
-      "pct_positive": 47.5,
-      "doc_count": 2325
-    },
-    {
-      "angle": "Geopolitical Tensions",
-      "avg_sentiment": -0.0015,
-      "pct_positive": 40.6,
-      "doc_count": 5189
-    },
-    {
       "angle": "Economic Impact",
+      "doc_count": 800,
       "avg_sentiment": 0.0098,
-      "pct_positive": 50.8,
-      "doc_count": 2198
+      "pct_positive": 50.8
+    },
+    {
+      "angle": "Military Operations",
+      "doc_count": 1800,
+      "avg_sentiment": -0.0122,
+      "pct_positive": 47.5
     },
     {
       "angle": "Media / Propaganda",
+      "doc_count": 500,
       "avg_sentiment": -0.0135,
-      "pct_positive": 51.1,
-      "doc_count": 1224
+      "pct_positive": 51.1
     },
     {
       "angle": "War Support / Opposition",
+      "doc_count": 1200,
       "avg_sentiment": 0.0074,
-      "pct_positive": 51.2,
-      "doc_count": 2351
+      "pct_positive": 51.2
+    },
+    {
+      "angle": "Geopolitical Tensions",
+      "doc_count": 4819,
+      "avg_sentiment": -0.0015,
+      "pct_positive": 40.6
     }
   ],
   "textblob_distribution": {
