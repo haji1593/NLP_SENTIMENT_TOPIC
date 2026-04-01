@@ -1,0 +1,27 @@
+# Large source data files (not needed on cloud — data/ folder has pre-generated outputs)
+consolidated_war_data1.xlsx
+cleaned_output2.xlsx
+all_sources_combined.xlsx
+
+# Python cache
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Env
+.env
+venv/
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude internal
+.claude/
+
+# Keep these committed:
+# data/              ← JSON + PNGs (dashboard reads from here)
+# .streamlit/        ← Streamlit config
+# requirements.txt   ← Cloud dependencies
+# app.py             ← Combined dashboard + pipeline

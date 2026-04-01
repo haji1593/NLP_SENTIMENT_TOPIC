@@ -1,0 +1,341 @@
+{
+  "summary": {
+    "total_docs": 9087,
+    "sources": 7,
+    "avg_sentiment": -0.2764,
+    "pct_positive": 24.9,
+    "pct_neutral": 16.1,
+    "pct_negative": 59.0
+  },
+  "by_source": [
+    {
+      "source": "Facebook",
+      "avg_sentiment": -0.0414
+    },
+    {
+      "source": "Instagram",
+      "avg_sentiment": -0.0166
+    },
+    {
+      "source": "News Outlet",
+      "avg_sentiment": -0.6446
+    },
+    {
+      "source": "Reddit",
+      "avg_sentiment": -0.1521
+    },
+    {
+      "source": "TikTok",
+      "avg_sentiment": -0.0213
+    },
+    {
+      "source": "Twitter",
+      "avg_sentiment": -0.6187
+    },
+    {
+      "source": "YouTube",
+      "avg_sentiment": -0.1901
+    }
+  ],
+  "source_detail": [
+    {
+      "source": "Facebook",
+      "Negative": 568,
+      "Neutral": 541,
+      "Positive": 491
+    },
+    {
+      "source": "Instagram",
+      "Negative": 179,
+      "Neutral": 110,
+      "Positive": 191
+    },
+    {
+      "source": "News Outlet",
+      "Negative": 840,
+      "Neutral": 6,
+      "Positive": 170
+    },
+    {
+      "source": "Reddit",
+      "Negative": 946,
+      "Neutral": 314,
+      "Positive": 579
+    },
+    {
+      "source": "TikTok",
+      "Negative": 195,
+      "Neutral": 177,
+      "Positive": 192
+    },
+    {
+      "source": "Twitter",
+      "Negative": 1711,
+      "Neutral": 13,
+      "Positive": 163
+    },
+    {
+      "source": "YouTube",
+      "Negative": 926,
+      "Neutral": 302,
+      "Positive": 473
+    }
+  ],
+  "by_angle": [
+    {
+      "angle": "Military Operations",
+      "avg_sentiment": -0.5897,
+      "pct_positive": 14.4,
+      "doc_count": 2325
+    },
+    {
+      "angle": "Geopolitical Tensions",
+      "avg_sentiment": -0.451,
+      "pct_positive": 19.2,
+      "doc_count": 5189
+    },
+    {
+      "angle": "Economic Impact",
+      "avg_sentiment": -0.4661,
+      "pct_positive": 21.0,
+      "doc_count": 2198
+    },
+    {
+      "angle": "Media / Propaganda",
+      "avg_sentiment": -0.5828,
+      "pct_positive": 17.1,
+      "doc_count": 1224
+    },
+    {
+      "angle": "War Support / Opposition",
+      "avg_sentiment": -0.3567,
+      "pct_positive": 28.9,
+      "doc_count": 2351
+    }
+  ],
+  "sentiment_distribution": {
+    "Negative": 5365,
+    "Positive": 2259,
+    "Neutral": 1463
+  },
+  "textblob_summary": {
+    "avg_sentiment": 0.0035,
+    "pct_positive": 34.8,
+    "pct_neutral": 36.2,
+    "pct_negative": 29.0
+  },
+  "textblob_by_source": [
+    {
+      "source": "Facebook",
+      "avg_sentiment": 0.0393
+    },
+    {
+      "source": "Instagram",
+      "avg_sentiment": 0.0426
+    },
+    {
+      "source": "News Outlet",
+      "avg_sentiment": 0.0163
+    },
+    {
+      "source": "Reddit",
+      "avg_sentiment": 0.0158
+    },
+    {
+      "source": "TikTok",
+      "avg_sentiment": -0.0102
+    },
+    {
+      "source": "Twitter",
+      "avg_sentiment": -0.029
+    },
+    {
+      "source": "YouTube",
+      "avg_sentiment": -0.0213
+    }
+  ],
+  "textblob_by_angle": [
+    {
+      "angle": "Military Operations",
+      "avg_sentiment": -0.0121,
+      "pct_positive": 47.5,
+      "doc_count": 2325
+    },
+    {
+      "angle": "Geopolitical Tensions",
+      "avg_sentiment": -0.0014,
+      "pct_positive": 40.6,
+      "doc_count": 5189
+    },
+    {
+      "angle": "Economic Impact",
+      "avg_sentiment": 0.0098,
+      "pct_positive": 50.8,
+      "doc_count": 2198
+    },
+    {
+      "angle": "Media / Propaganda",
+      "avg_sentiment": -0.0135,
+      "pct_positive": 51.1,
+      "doc_count": 1224
+    },
+    {
+      "angle": "War Support / Opposition",
+      "avg_sentiment": 0.0074,
+      "pct_positive": 51.2,
+      "doc_count": 2351
+    }
+  ],
+  "textblob_distribution": {
+    "Neutral": 3288,
+    "Positive": 3166,
+    "Negative": 2633
+  },
+  "supervised": {
+    "vader": {
+      "accuracy": 0.8163,
+      "n_train": 7269,
+      "n_test": 1818,
+      "classes": [
+        "Negative",
+        "Neutral",
+        "Positive"
+      ],
+      "report": {
+        "Negative": {
+          "precision": 0.8278757346767422,
+          "recall": 0.9240862230552952,
+          "f1-score": 0.8733392382639504,
+          "support": 1067.0
+        },
+        "Neutral": {
+          "precision": 0.7821011673151751,
+          "recall": 0.6184615384615385,
+          "f1-score": 0.6907216494845361,
+          "support": 325.0
+        },
+        "Positive": {
+          "precision": 0.8027027027027027,
+          "recall": 0.6971830985915493,
+          "f1-score": 0.7462311557788944,
+          "support": 426.0
+        }
+      }
+    },
+    "textblob": {
+      "accuracy": 0.7954,
+      "n_train": 7269,
+      "n_test": 1818,
+      "classes": [
+        "Negative",
+        "Neutral",
+        "Positive"
+      ],
+      "report": {
+        "Negative": {
+          "precision": 0.8385542168674699,
+          "recall": 0.655367231638418,
+          "f1-score": 0.7357293868921776,
+          "support": 531.0
+        },
+        "Neutral": {
+          "precision": 0.7440993788819876,
+          "recall": 0.9286821705426357,
+          "f1-score": 0.8262068965517242,
+          "support": 645.0
+        },
+        "Positive": {
+          "precision": 0.8344481605351171,
+          "recall": 0.7772585669781932,
+          "f1-score": 0.8048387096774193,
+          "support": 642.0
+        }
+      }
+    }
+  },
+  "clustering": {
+    "n_clusters": 5,
+    "clusters": [
+      {
+        "cluster": 0,
+        "top_words": [
+          "regime",
+          "evil",
+          "illegal",
+          "world",
+          "trump",
+          "started",
+          "iran",
+          "israel",
+          "war",
+          "usa"
+        ],
+        "count": 338
+      },
+      {
+        "cluster": 1,
+        "top_words": [
+          "energy",
+          "israel",
+          "strait",
+          "military",
+          "irans",
+          "war",
+          "oil",
+          "iranian",
+          "trump",
+          "iran"
+        ],
+        "count": 1021
+      },
+      {
+        "cluster": 2,
+        "top_words": [
+          "thought",
+          "nuclear",
+          "america",
+          "strait",
+          "oil",
+          "peace",
+          "war",
+          "world",
+          "iran",
+          "trump"
+        ],
+        "count": 5586
+      },
+      {
+        "cluster": 3,
+        "top_words": [
+          "brutally",
+          "human",
+          "council",
+          "aggressor",
+          "regimes",
+          "illegal",
+          "unjustified",
+          "fm",
+          "nucleararmed",
+          "imposed"
+        ],
+        "count": 64
+      },
+      {
+        "cluster": 4,
+        "top_words": [
+          "world",
+          "stop",
+          "started",
+          "usisrael",
+          "help",
+          "america",
+          "trump",
+          "israel",
+          "iran",
+          "war"
+        ],
+        "count": 2078
+      }
+    ]
+  }
+}

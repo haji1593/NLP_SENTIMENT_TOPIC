@@ -1,0 +1,178 @@
+{
+  "n_topics": 6,
+  "topics": [
+    {
+      "id": 0,
+      "label": "State Power, Governance & Political Leadership",
+      "words": [
+        "iran",
+        "war",
+        "strike",
+        "iran war",
+        "trump",
+        "hit",
+        "uk",
+        "attack",
+        "external",
+        "warn"
+      ],
+      "count": 257,
+      "percentage": 2.8
+    },
+    {
+      "id": 1,
+      "label": "Regional Conflict & Proxy Warfare (Iran-Israel-Hezbollah)",
+      "words": [
+        "iran",
+        "war",
+        "israel",
+        "trump",
+        "war iran",
+        "country",
+        "world",
+        "start",
+        "usa",
+        "america"
+      ],
+      "count": 3770,
+      "percentage": 41.5
+    },
+    {
+      "id": 2,
+      "label": "Online Discourse & Nuclear Conflict Narratives",
+      "words": [
+        "trump",
+        "iran",
+        "war",
+        "state",
+        "nuclear",
+        "american",
+        "president",
+        "regime",
+        "post",
+        "power"
+      ],
+      "count": 2161,
+      "percentage": 23.8
+    },
+    {
+      "id": 3,
+      "label": "Military Operations & Weapons Systems",
+      "words": [
+        "iran",
+        "trump",
+        "war",
+        "iranian",
+        "strait",
+        "hormuz",
+        "israel",
+        "talk",
+        "strait hormuz",
+        "president"
+      ],
+      "count": 972,
+      "percentage": 10.7
+    },
+    {
+      "id": 4,
+      "label": "Global Energy Markets & Strait of Hormuz",
+      "words": [
+        "oil",
+        "price",
+        "energy",
+        "market",
+        "global",
+        "strait",
+        "hormuz",
+        "supply",
+        "gas",
+        "iran"
+      ],
+      "count": 1081,
+      "percentage": 11.9
+    },
+    {
+      "id": 5,
+      "label": "Diplomatic Negotiations & International Response",
+      "words": [
+        "iran",
+        "israel",
+        "attack",
+        "military",
+        "missile",
+        "strike",
+        "iranian",
+        "israeli",
+        "target",
+        "force"
+      ],
+      "count": 846,
+      "percentage": 9.3
+    }
+  ],
+  "topic_by_source": [
+    {
+      "Source": "Facebook",
+      "Diplomatic Negotiations & International Response": 81,
+      "Global Energy Markets & Strait of Hormuz": 68,
+      "Military Operations & Weapons Systems": 157,
+      "Online Discourse & Nuclear Conflict Narratives": 480,
+      "Regional Conflict & Proxy Warfare (Iran-Israel-Hezbollah)": 742,
+      "State Power, Governance & Political Leadership": 72
+    },
+    {
+      "Source": "Instagram",
+      "Diplomatic Negotiations & International Response": 66,
+      "Global Energy Markets & Strait of Hormuz": 18,
+      "Military Operations & Weapons Systems": 16,
+      "Online Discourse & Nuclear Conflict Narratives": 99,
+      "Regional Conflict & Proxy Warfare (Iran-Israel-Hezbollah)": 271,
+      "State Power, Governance & Political Leadership": 10
+    },
+    {
+      "Source": "News Outlet",
+      "Diplomatic Negotiations & International Response": 269,
+      "Global Energy Markets & Strait of Hormuz": 200,
+      "Military Operations & Weapons Systems": 245,
+      "Online Discourse & Nuclear Conflict Narratives": 246,
+      "Regional Conflict & Proxy Warfare (Iran-Israel-Hezbollah)": 1,
+      "State Power, Governance & Political Leadership": 55
+    },
+    {
+      "Source": "Reddit",
+      "Diplomatic Negotiations & International Response": 60,
+      "Global Energy Markets & Strait of Hormuz": 457,
+      "Military Operations & Weapons Systems": 274,
+      "Online Discourse & Nuclear Conflict Narratives": 647,
+      "Regional Conflict & Proxy Warfare (Iran-Israel-Hezbollah)": 369,
+      "State Power, Governance & Political Leadership": 32
+    },
+    {
+      "Source": "TikTok",
+      "Diplomatic Negotiations & International Response": 20,
+      "Global Energy Markets & Strait of Hormuz": 28,
+      "Military Operations & Weapons Systems": 60,
+      "Online Discourse & Nuclear Conflict Narratives": 136,
+      "Regional Conflict & Proxy Warfare (Iran-Israel-Hezbollah)": 289,
+      "State Power, Governance & Political Leadership": 31
+    },
+    {
+      "Source": "Twitter",
+      "Diplomatic Negotiations & International Response": 221,
+      "Global Energy Markets & Strait of Hormuz": 193,
+      "Military Operations & Weapons Systems": 101,
+      "Online Discourse & Nuclear Conflict Narratives": 54,
+      "Regional Conflict & Proxy Warfare (Iran-Israel-Hezbollah)": 1313,
+      "State Power, Governance & Political Leadership": 5
+    },
+    {
+      "Source": "YouTube",
+      "Diplomatic Negotiations & International Response": 129,
+      "Global Energy Markets & Strait of Hormuz": 117,
+      "Military Operations & Weapons Systems": 119,
+      "Online Discourse & Nuclear Conflict Narratives": 499,
+      "Regional Conflict & Proxy Warfare (Iran-Israel-Hezbollah)": 785,
+      "State Power, Governance & Political Leadership": 52
+    }
+  ]
+}
