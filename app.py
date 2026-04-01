@@ -42,6 +42,19 @@ if _STREAMLIT_MODE:
         initial_sidebar_state="expanded",
     )
 
+    # ── Colour Themes ────────────────────────────────────────────
+    THEMES = {
+        "🌑 Space Dark":      {"bg":"#07090f","navy":"#0b0f1a","navy2":"#10172a","navy3":"#161f36","red":"#f03e5a","red_dim":"#7b1d2e","gold":"#f5a623","green":"#00d68f","blue":"#4c8ef7","purple":"#8b5cf6","teal":"#06b6d4","text":"#e8edf5","muted":"#7a8699","border":"#1e2d4a","card_bg":"rgba(16,23,42,0.9)","sidebar":"linear-gradient(180deg,#0b0f1a 0%,#10172a 100%)","light":False},
+        "☀️ Arctic White":    {"bg":"#f0f4ff","navy":"#ffffff","navy2":"#edf1ff","navy3":"#e0e7ff","red":"#e8304a","red_dim":"#fde8eb","gold":"#d97706","green":"#059669","blue":"#2563eb","purple":"#7c3aed","teal":"#0891b2","text":"#0f172a","muted":"#64748b","border":"#c7d2fe","card_bg":"rgba(255,255,255,0.97)","sidebar":"linear-gradient(180deg,#ffffff 0%,#edf1ff 100%)","light":True},
+        "🟣 Midnight Purple": {"bg":"#0a0612","navy":"#100a1e","navy2":"#160d2a","navy3":"#1e1038","red":"#ec4899","red_dim":"#831843","gold":"#fbbf24","green":"#22d3ee","blue":"#818cf8","purple":"#a855f7","teal":"#06b6d4","text":"#f0e8ff","muted":"#9b8ec4","border":"#2e1d4a","card_bg":"rgba(22,13,42,0.9)","sidebar":"linear-gradient(180deg,#100a1e 0%,#160d2a 100%)","light":False},
+        "🌅 Sunset Coral":    {"bg":"#0f0905","navy":"#1a0e08","navy2":"#261510","navy3":"#321b12","red":"#ff6b35","red_dim":"#7c2d12","gold":"#ffd23f","green":"#06d6a0","blue":"#4cc9f0","purple":"#f72585","teal":"#4cc9f0","text":"#fff5f0","muted":"#c4917a","border":"#3d2010","card_bg":"rgba(38,21,16,0.9)","sidebar":"linear-gradient(180deg,#1a0e08 0%,#261510 100%)","light":False},
+        "🌊 Ocean Teal":      {"bg":"#020d12","navy":"#031620","navy2":"#04202e","navy3":"#052a3d","red":"#f72585","red_dim":"#7b1d5e","gold":"#ffd166","green":"#06d6a0","blue":"#4cc9f0","purple":"#7b2fff","teal":"#00d4ff","text":"#e0f7ff","muted":"#5a8a9a","border":"#0a3a4a","card_bg":"rgba(4,32,46,0.9)","sidebar":"linear-gradient(180deg,#031620 0%,#04202e 100%)","light":False},
+    }
+    if "color_theme" not in st.session_state:
+        st.session_state.color_theme = "🌑 Space Dark"
+    _T  = THEMES[st.session_state.color_theme]
+    _LT = _T.get("light", False)
+
     # ── Master CSS ──────────────────────────────────────────────
     st.markdown("""
     <style>
@@ -137,6 +150,25 @@ if _STREAMLIT_MODE:
     </style>
     """, unsafe_allow_html=True)
 
+    # ── Dynamic theme override ────────────────────────────────────
+    _light_extra = (
+        "html,body,.stApp{color:#0f172a!important;}"
+        "section[data-testid='stSidebar'] *{color:#0f172a!important;}"
+        ".sec-title,.hero-title,.kpi-value,.clf-value{color:#0f172a!important;}"
+        ".stTabs [aria-selected='true']{color:#0f172a!important;}"
+    ) if _LT else ""
+    st.markdown(f"""<style>
+    :root{{
+      --bg:{_T['bg']};--navy:{_T['navy']};--navy2:{_T['navy2']};--navy3:{_T['navy3']};
+      --red:{_T['red']};--red-dim:{_T['red_dim']};--gold:{_T['gold']};--green:{_T['green']};
+      --blue:{_T['blue']};--purple:{_T['purple']};--teal:{_T['teal']};
+      --text:{_T['text']};--muted:{_T['muted']};--border:{_T['border']};
+      --card-bg:{_T['card_bg']};
+    }}
+    section[data-testid="stSidebar"]{{background:{_T['sidebar']}!important;}}
+    {_light_extra}
+    </style>""", unsafe_allow_html=True)
+
     # ── Helpers ─────────────────────────────────────────────────
     def section(icon, title, subtitle=""):
         st.markdown(
@@ -171,7 +203,7 @@ if _STREAMLIT_MODE:
         title_font=dict(size=13, color="#e6edf3", family="Inter"),
         legend=dict(bgcolor="rgba(0,0,0,0)", bordercolor="#30363d"),
     )
-    COLORS = {"red":"#e94560","green":"#10b981","gold":"#f59e0b","blue":"#3b82f6","muted":"#8b949e"}
+    COLORS = {"red":_T["red"],"green":_T["green"],"gold":_T["gold"],"blue":_T["blue"],"muted":_T["muted"]}
     BASE_DIR = Path(__file__).parent
 
     # Download NLTK data once (needed on Streamlit Cloud)
@@ -342,6 +374,16 @@ if _STREAMLIT_MODE:
                     st.session_state.page = key; st.rerun()
 
         st.markdown('<div style="height:1px;background:#1e2d4a;margin:1rem 0;"></div>', unsafe_allow_html=True)
+        st.markdown('<div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#8b949e;margin-bottom:0.5rem;">Interface Theme</div>', unsafe_allow_html=True)
+        _tcols = st.columns(len(THEMES))
+        for _ti, (_tname, _tdata) in enumerate(THEMES.items()):
+            with _tcols[_ti]:
+                _tactive = st.session_state.color_theme == _tname
+                if st.button(_tname.split(" ")[0], key=f"theme_{_ti}", help=_tname,
+                              use_container_width=True,
+                              type="primary" if _tactive else "secondary"):
+                    st.session_state.color_theme = _tname
+                    st.rerun()
         theme    = st.selectbox("Chart theme", ["plotly_dark","plotly","plotly_white"])
         show_raw = st.toggle("Show data tables", value=False)
 
